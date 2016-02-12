@@ -10,7 +10,7 @@
 #include <fcntl.h>
 #include <stdlib.h>
 
-int main(int argc, char* argv[]){
+int server(int argc, char* argv[]){
 
 	int fd_serv, fd_cli;
 	int opt, leido;
@@ -58,7 +58,7 @@ int main(int argc, char* argv[]){
 			//sleep(5);
 			addrcliente = inet_ntoa(cliente.sin_addr);
 			printf("IP cliente : %s , puerto Cliente: %d \n",addrcliente,ntohs(cliente.sin_port));
-			write(fd_cli,buff,leido); // para que es este write?
+			write(fd_cli,buff,leido);
 			close(fd_cli);
 			close(fd_serv);
 			return 0;
